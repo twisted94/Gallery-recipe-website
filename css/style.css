@@ -16,6 +16,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+h2 {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    margin-top: 10px;
+}
+
 h3 {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -52,6 +59,62 @@ h3 {
     height: 100%;
     object-fit: cover;
     box-shadow: 3px 3px 8px rgba(000,000,000,0.2);
+    cursor: pointer;
+}
+
+/* POPUP STYLING */
+.popup-bg {
+    position: fixed;
+    display: flex;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(000,000,000,0.5);
+    visibility: hidden;
+}
+
+.popup-container {
+    max-height: 95vh;
+    margin: 10px;
+    background-color: rgb(255,255,255);
+    border-radius: 20px;
+    border-color: white;
+    border-width: 20px;
+    border-style: solid;
+    padding: 0px;
+    z-index: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: auto;
+    white-space: none;
+}
+
+.show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.3s;
+    animation: fadeIn 0.3s;
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.popup-bg-img { /* Add image to the top of the recipe popup */
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 10px 0px 0px;
 }
 
 /* FOOTER STYLING */
@@ -64,8 +127,12 @@ footer {
         font-size: 100px;
     }
 
-    h3 {
+    h2 {
         font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
     }
 
     .container {
@@ -74,5 +141,12 @@ footer {
     
     .image-gallery {
       flex-direction: row;
+    }
+
+    .popup-container {
+        width: 40%;
+        min-width: 600px;
+        max-height: 85vh;
+        margin: auto;
     }
 }
